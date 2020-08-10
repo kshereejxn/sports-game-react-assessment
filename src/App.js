@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/game/Game';
+import Veggies from './assets/veggie.gif';
+import Fruits from './assets/fruit.gif';
+import Tigers from './assets/2bball.gif';
+import Panthers from './assets/bball1.gif';
+
+
 
 function App() {
+  const veggie = {
+    name: 'Vengeful Veggies',
+    logoSrc: Veggies
+  }
+
+  const fruits = {
+    name: 'Fearless Fruitful',
+    logoSrc: Fruits
+  }
+
+  const shirts = {
+    name: 'Tommy Tigers',
+    logoSrc: Tigers
+  }
+
+  const skins = {
+    name: 'Pauly Panthers',
+    logoSrc: Panthers
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game
+        venue="K Sheree Stadium"
+        homeTeam={veggie}
+        visitingTeam={fruits}
+      />
+      <Game
+        venue="Fire-Ball Arena"
+        homeTeam={shirts}
+        visitingTeam={skins}
+      />
     </div>
-  );
+  )
 }
 
 export default App;
